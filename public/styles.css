@@ -1,0 +1,203 @@
+/* General body styling */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #E5DDD5; /* WhatsApp background color */
+    color: #111;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Chat container styling */
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    width: 90vw;
+    max-width: auto;
+    height: 90vh;
+    max-height: auto;
+    background-color: #FFFFFF; /* WhatsApp chat container background */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Chat header styling */
+.chat-header {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #075E54; /* WhatsApp header green */
+    color: #FFFFFF; /* Header text color */
+    font-size: 1.2em;
+    /* border-top-left-radius: 10px;
+    border-top-right-radius: 10px; */
+}
+
+/* WhatsApp logo or back arrow */
+.chat-header i {
+    color: #25D366;
+}
+
+.chat-header h3 {
+    margin: 0;
+    flex: 1;
+    text-align: left;
+    font-size: 1.2em;
+    font-weight: normal;
+}
+
+/* Chat box styling */
+.chat-box {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+    border-bottom: 1px solid #DDDDDD;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #ECE5DD; /* WhatsApp chat background */
+}
+
+.wa-chat-box-content {
+    background: #FFFFFF; /* White background */
+    background-image: url('https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png'); /* Subtle texture */
+  }
+
+/* Chat input styling */
+.chat-input {
+    display: flex;
+    padding: 10px;
+    background-color: #F7F7F7; /* WhatsApp input area color */
+    border-top: 1px solid #DDDDDD;
+}
+
+.chat-input input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #DDDDDD;
+    border-radius: 4px;
+    background-color: #FFFFFF;
+    color: #000000;
+    font-size: 1em;
+    outline: none; /* Removes the black border on focus */
+}
+
+.chat-input button {
+    padding: 10px;
+    border: none;
+    background-color: #075E54; /* WhatsApp button color */
+    color: #FFFFFF;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-left: 10px;
+    font-size: 1em;
+}
+
+.chat-input button img {
+    width: 20px;
+    height: 20px;
+}
+
+.chat-input button:hover {
+    background-color: #128C7E; /* WhatsApp button hover color */
+}
+
+/* Message styling */
+.message {
+    max-width: 70%;
+    padding: 10px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    word-wrap: break-word;
+}
+
+.message.user {
+    align-self: flex-end;
+    background-color: #DCF8C6; /* WhatsApp sent message color */
+    color: #000;
+}
+
+.message.received {
+    align-self: flex-start;
+    background-color: #FFFFFF; /* WhatsApp received message color */
+    color: #000;
+}
+
+.message-info {
+    font-size: 0.75em;
+    color: #888;
+    margin-top: 5px;
+}
+
+/* Responsive styling for small devices (smartphones) */
+@media (max-width: 600px) {
+    .chat-container {
+        width: 100%;
+        height: 100vh;
+        border-radius: 0;
+    }
+
+    .chat-header {
+        font-size: 1.2em;
+        padding: 8px;
+    }
+
+    .chat-input input, .chat-input button {
+        font-size: 0.9em;
+        margin-bottom: 64px;
+    }
+
+    .chat-input button img {
+        width: 18px;
+        height: 18px;
+    }
+
+    .message {
+        max-width: 80%;
+    }
+}
+
+/* Responsive styling for tablets and larger screens */
+@media (min-width: 601px) and (max-width: 1024px) {
+    .chat-container {
+        width: auto;
+        height: auto;
+        max-width: 1024px;
+    }
+
+    .chat-header {
+        font-size: 1.5em;
+    }
+
+    .chat-input input, .chat-input button {
+        font-size: 1em;
+    }
+
+    .message {
+        max-width: 70%;
+    }
+}
+
+/* Responsive styling for laptops and desktops */
+@media (min-width: 1025px) and (orientation: landscape) {
+    .chat-container {
+        width: 100%;
+        height: 100%;
+    }
+
+    .chat-header {
+        font-size: 1.8em;
+    }
+
+    .chat-input input, .chat-input button {
+        font-size: 1.2em;
+    }
+
+    .message {
+        max-width: 60%;
+    }
+}
