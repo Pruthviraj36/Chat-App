@@ -9,9 +9,13 @@
 </head>
 <body>
     <script>
-        // Redirect to login.html if no username is found in localStorage
-        if (!localStorage.getItem('username')) {
-            window.location.href = 'login.html';
+        // Prompt the user for a username if not already set
+        let username = localStorage.getItem('username');
+        while (!username) {
+            username = prompt('Please enter your name:');
+            if (username) {
+                localStorage.setItem('username', username);
+            }
         }
     </script>
 
@@ -26,7 +30,7 @@
         <div class="chat-input">
             <input type="text" id="messageInput" placeholder="Type a message..." />
             <button id="sendButton">
-                <img src="https://github.com/Pruthviraj36/Whatsapp-Web_clone/blob/main/assets/whatsapp-send-icon.png?raw=true" alt="Send" />
+                <i class="fa fa-paper-plane" aria-hidden="true"></i> <!-- Paper plane icon -->
             </button>
         </div>        
     </div>
