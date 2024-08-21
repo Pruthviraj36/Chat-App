@@ -1,4 +1,5 @@
 const express = require('express')
+const Message = require('./models/Message')
 const route = express.Router()
 
 // Get all messages
@@ -26,7 +27,7 @@ route.get('/:username', async (req, res) => {
 });
 
 // Create a new message
-route.post('/', async (req, res) => {
+route.post('/create', async (req, res) => {
     try {
         const message = new Message(req.body);
         const savedMessage = await message.save();
@@ -37,7 +38,7 @@ route.post('/', async (req, res) => {
 });
 
 // Update a message by username
-route.patch('/:username', async (req, res) => {
+route.patch('/update/:username', async (req, res) => {
     try {
         const message = await Message.findOne({ username: req.params.username });
         if (message) {
@@ -53,7 +54,7 @@ route.patch('/:username', async (req, res) => {
 });
 
 // Delete a message by username
-route.delete('/:username', async (req, res) => {
+route.delete('/delete/:username', async (req, res) => {
     try {
         const result = await Message.deleteMany({ username: req.params.username });
         res.send(result);
@@ -63,7 +64,7 @@ route.delete('/:username', async (req, res) => {
 });
 
 // Delete all messages
-route.delete('/', async (req, res) => {
+route.delete('/deleteAll', async (req, res) => {
     try {
         const result = await Message.deleteMany({});
         res.send(result);

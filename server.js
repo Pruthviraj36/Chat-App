@@ -14,7 +14,8 @@ const server = http.createServer(app)
 const io = socketIo(server)
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
-app.use(`/${process.env.ROUTE}`, messageRoute)
+app.use('/dynamo', messageRoute)
+
 
 mongoose.connect(mongoUri, {
     useNewUrlParser: true,
