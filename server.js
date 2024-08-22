@@ -6,7 +6,7 @@ const bodyParser = require('body-parser')
 const Message = require('./models/Message')
 const messageRoute = require('./MsgRoute')
 require('dotenv').config()
-
+ 
 const mongoUri = process.env.MONGO_URI
 
 const app = express()
