@@ -24,7 +24,7 @@
         }
     });
 
-    socket.on('chat message', function (msg) {
+    socket.on('chat message', (msg) => {
         const messageType = msg.username === username ? 'user' : 'received';
         addMessage(msg.username, msg.text, msg.timestamp, messageType);
     });

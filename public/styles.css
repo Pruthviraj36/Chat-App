@@ -69,7 +69,8 @@ body {
 /* Chat input styling */
 .chat-input {
     display: flex;
-    padding: 10px;
+    padding: px;
+    /* padding: 10px */
     background-color: #F7F7F7; /* WhatsApp input area color */
     border-top: 1px solid #DDDDDD;
 }
